@@ -1,11 +1,13 @@
 package dagger
 
-import "embed"
+import (
+	"dagger.io/dagger/querybuilder"
+	"embed"
+)
 
 // These are exported so that they can be used by codegen.
 
-//go:embed querybuilder/marshal.go querybuilder/querybuilder.go
-var QueryBuilder embed.FS
+var QueryBuilder embed.FS = querybuilder.Embeds
 
 //go:embed go.mod
 var GoMod []byte
